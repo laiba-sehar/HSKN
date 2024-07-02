@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 190px;
+  background-color: #FFF8EB;
+  z-index: 1002; /* Ensure navbar is above other elements */
+}
+
+.logo img {
+  height: 60px; 
+  margin-right: 20px; 
+}
+
+.navbar-brand,
+.nav-link {
+  font-family: 'Titan One', cursive; 
+  color: #000;
+  font-size: 14px;
+  padding: 20px;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  list-style: none;
+  font-family: 'Times New Roman', Times, serif;
+  display: none;
+  position: absolute;
+  left: 0; /* Start the dropdown menu from the left */
+  width: 100%; /* Full width of the parent container */
+  max-width: 300px; /* Adjust max-width as needed */
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 0 black;
+  z-index: 1000; /* Ensure dropdown is above other elements */
+}
+
+
+.dropdown-menu .dropdown-item {
+  padding: 8px 16px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  border: 1px solid #000; /* Add a border-bottom for separation */
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #F4E9CD; /* Background color on hover */
+}
+
+/* Show dropdown menu on hover */
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 120px;
+}
+
+.switch-button {
+  margin-left: 10px;
+  padding: 15px 40px;
+  border: 2px solid black;
+  border-radius: 40px;
+  background-color: #19F2B2;
+  font-size: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 0 black;
+  font-family: 'Titan One';
+}
+
+.switch-button:hover {
+  box-shadow: 0 -4px 0 black;
+  background-color: #18DEB2;
+  transform: translateY(4px);
+}
+
+.round-image {
+  margin-right: 100px; /* Adjust margin to separate from buttons */
+}
+
+.round-image img {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 35px; 
+  height: 35px; 
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 0 black;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    background: none;
+    border: 2px solid black;
+    border-radius: 50px;
+    /* padding: px 5px; */
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 0 black;
+    top: 25px; /* Adjust this value to move the button lower */
+    right: 10px;
+  }
+
+  .collapse.navbar-collapse {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF8EB;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1000;
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+  }
+
+  .collapse.navbar-collapse.show {
+    transform: translateY(0);
+  }
+
+  .navbar-nav {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin-bottom: 20px;
+  }
+  .dropdown-menu {
+    top: 100%; /* Position dropdown below nav item */
+    left: 0;
+    width: 100%;
+    max-width: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+
+  .buttons {
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .switch-button {
+    margin: 10px 0;
+    width: calc(100% - 20px); /* Adjust width as needed with padding/margins */
+  }
+
+  .round-image img {
+    position: fixed;
+    top: 22px;
+    /* right: 20px; */
+    margin-left: 80px;
+  }
+
+  .navbar-brand img {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  
+  .round-image {
+    position: fixed;
+    top: 25px;
+    right: 80px;
+    margin-left: 10px;
+  }
+
+  .navbar-brand img {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+}
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
